@@ -2,7 +2,7 @@
 # α) να τα εκτυπώνει ένα ένα ανά γραμμή 
 # και ταυτόχρονα να εκτυπώνει το μέγεθος (πλήθος χαρακτήρων) του κάθε ονόματος
 
-names = ["Mike", "George", "Mary", "Vaggelis"]
+names = ["Mike", "George", "Mary", "Vaggelis", "Mitsos"]
 
 for name in names:
     print(name + " " + str(len(name)))
