@@ -1,1 +1,1 @@
-print("It is a new test")
+print("It is a test")
