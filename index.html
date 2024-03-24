@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>My Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS to Python Communication</title>
 </head>
-
 <body>
-  <h1>Hello World!</h1>
-  <p>Welcome to my page!!!</p>
+    <h1>JS to Python Communication</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="sendData()">Calculate Square</button>
+    <p id="result"></p>
+
+    <script>
+        function sendData() {
+            var number = document.getElementById('numberInput').value;
+
+            fetch('/square', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ number: parseInt(number) })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = 'Result: ' + data.result;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
-
 </html>
-
